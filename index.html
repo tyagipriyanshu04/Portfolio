@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Tyagi | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Priyanshu Tyagi - Computer Science Engineering student focused on Android development, data analytics, and AI/automation tools.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body class="welcome-active">
+
+    <div class="welcome-screen" id="welcome-screen" aria-label="Welcome screen">
+        <div class="welcome-screen__cursor" aria-hidden="true"></div>
+        <div class="welcome-screen__cursor-ring" aria-hidden="true"></div>
+        <div class="welcome-screen__rain" aria-hidden="true">
+            <span class="welcome-screen__rain-layer welcome-screen__rain-layer--1"></span>
+            <span class="welcome-screen__rain-layer welcome-screen__rain-layer--2"></span>
+            <span class="welcome-screen__rain-layer welcome-screen__rain-layer--3"></span>
+        </div>
+        <div class="welcome-screen__content">
+            <h1 class="welcome-screen__title">WELCOME</h1>
+            <button class="btn btn--primary welcome-screen__button" id="enter-portfolio" type="button">
+                Enter Portfolio <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="portfolio-shell" id="portfolio-shell">
+
+    <!-- ======================== NAVIGATION ======================== -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">PT<span>.</span></a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Highlights</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Certificates</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="CV.pdf" class="nav__link"
+                            download="Priyanshu_Tyagi_CV.pdf">Resume</a></li>
+                </ul>
+                <div class="nav__close" id="nav-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+
+            <div class="nav__actions">
+                <div class="nav__search-bar" id="search-trigger">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search...</span>
+                </div>
+                <button class="nav__icon-btn" id="dark-mode-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <a href="#contact" class="btn btn--accent nav__hire-btn">Contact</a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ======================== HERO ======================== -->
+    <section class="hero" id="home">
+        <div class="hero__overlay"></div>
+        <div class="hero__depth" aria-hidden="true">
+            <span class="hero__orb hero__orb--1"></span>
+            <span class="hero__orb hero__orb--2"></span>
+            <span class="hero__orb hero__orb--3"></span>
+        </div>
+        <div class="hero__particles" id="particles"></div>
+        <div class="hero__content container">
+            <span class="hero__greeting">Hello, I'm</span>
+            <h1 class="hero__name">PRIYANSHU TYAGI</h1>
+            <p class="hero__subtitle">Computer Science Engineering Student - Android Developer - Data & Automation</p>
+            <p class="hero__intro">Building Android apps, analyzing data, and crafting automation tools that make work
+                easier.</p>
+            <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">
+                    <i class="fa-solid fa-rocket"></i> View Projects
+                </a>
+                <a href="CV.pdf" class="btn btn--outline" download="Priyanshu_Tyagi_CV.pdf">
+                    <i class="fa-solid fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+        <div class="hero__scroll-indicator">
+            <span>Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ======================== ABOUT ======================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <span class="section__subtitle">Get to know me</span>
+            <h2 class="section__title">About Me</h2>
+
+            <div class="about__grid">
+                <div class="about__image-wrapper">
+                    <div class="about__image-card">
+                        <img src="IMG_7037.PNG" alt="Priyanshu Tyagi" class="about__image-full">
+                    </div>
+                </div>
+
+                <div class="about__content">
+                    <p class="about__text">
+                        I'm a <strong>B.Tech CSE student at Lovely Professional University</strong> with a strong focus
+                        on <strong>Android app development, data analytics and visualization,</strong> and
+                        <strong>AI/automation tools</strong>.
+                    </p>
+                    <p class="about__text">
+                        I enjoy combining programming with business analytics to build products that are practical and
+                        measurable. I approach each project with curiosity, discipline, and a steady desire to improve.
+                    </p>
+                    <ul class="about__traits">
+                        <li><i class="fa-solid fa-puzzle-piece"></i> Problem solving mindset</li>
+                        <li><i class="fa-solid fa-people-group"></i> Teamwork and collaboration</li>
+                        <li><i class="fa-solid fa-brain"></i> Critical thinking</li>
+                        <li><i class="fa-solid fa-wind"></i> Adaptable and eager to learn</li>
+                        <li><i class="fa-solid fa-comments"></i> Sociable and communicative</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary">
+                        <i class="fa-solid fa-handshake"></i> Let's Connect
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SKILLS ======================== -->
+    <section class="section skills" id="skills">
+        <div class="skills__bg" aria-hidden="true">
+            <span class="skills__glow skills__glow--1"></span>
+            <span class="skills__glow skills__glow--2"></span>
+            <span class="skills__glow skills__glow--3"></span>
+            <span class="skills__pattern skills__pattern--grid"></span>
+            <span class="skills__pattern skills__pattern--rings"></span>
+        </div>
+        <div class="container">
+            <span class="section__subtitle">What I work with</span>
+            <h2 class="section__title">My Skills</h2>
+
+            <div class="skills__grid">
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-brands fa-android"></i></div>
+                    <h3 class="skill-card__title">Android Development</h3>
+                    <p class="skill-card__desc">Android app lifecycle, UI, and data handling using Java and Kotlin.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-brands fa-python"></i></div>
+                    <h3 class="skill-card__title">Python</h3>
+                    <p class="skill-card__desc">Automation scripts, data analysis, and ML workflows.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-brands fa-java"></i></div>
+                    <h3 class="skill-card__title">Java</h3>
+                    <p class="skill-card__desc">Object-oriented programming for Android and core CS concepts.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-table"></i></div>
+                    <h3 class="skill-card__title">Data Analysis</h3>
+                    <p class="skill-card__desc">Cleaning, transformation, and insights using NumPy and Pandas.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="skill-card__title">Data Visualization</h3>
+                    <p class="skill-card__desc">Clear visual stories with Matplotlib and Seaborn.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="skill-card__title">Machine Learning</h3>
+                    <p class="skill-card__desc">Modeling and evaluation using Scikit-Learn.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3 class="skill-card__title">BI Tools</h3>
+                    <p class="skill-card__desc">Excel and Power BI dashboards, KPIs, and DAX formulas.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-card__icon"><i class="fa-solid fa-database"></i></div>
+                    <h3 class="skill-card__title">Databases</h3>
+                    <p class="skill-card__desc">Structured data storage and querying with MySQL.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== EXPERIENCE / HIGHLIGHTS ======================== -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <span class="section__subtitle">Academics and achievements</span>
+            <h2 class="section__title">Education & Highlights</h2>
+
+            <div class="experience__grid">
+                <div class="experience__card">
+                    <div class="experience__icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="experience__title">B.Tech CSE - LPU</h3>
+                    <p class="experience__desc">Since Aug 2023 | CGPA: 6.59 | Intermediate: 65% | Matriculation: 91%.
+                    </p>
+                </div>
+                <div class="experience__card">
+                    <div class="experience__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3 class="experience__title">Android Development Training</h3>
+                    <p class="experience__desc">Summer training at LPU (Jun - Aug 2025) covering UI/UX, lifecycle,
+                        navigation, API integration, data handling, and debugging.</p>
+                </div>
+                <div class="experience__card">
+                    <div class="experience__icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h3 class="experience__title">Certifications</h3>
+                    <p class="experience__desc">Power BI Live Workshop (Office Master), Generative AI Apps (Infosys),
+                        Computational Theory & Finite Automata (Infosys), Privacy & Security in Online Social Media
+                        (NPTEL), Python for Data Science (Board Infinity).</p>
+                </div>
+                <div class="experience__card">
+                    <div class="experience__icon"><i class="fa-solid fa-medal"></i></div>
+                    <h3 class="experience__title">Sports Achievements</h3>
+                    <p class="experience__desc">Runner-up in Arm Wrestling - DTU National Sports Event (2025). Bronze
+                        medal in National-Level Badminton Tournament (2019).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROJECTS ======================== -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <span class="section__subtitle">What I've built</span>
+            <h2 class="section__title">My Projects</h2>
+
+            <div class="projects__grid">
+                <div class="project-card"
+                    data-title="Habit Hero App"
+                    data-tag="Android"
+                    data-duration="June 2025 - July 2025"
+                    data-tech="Java, Kotlin"
+                    data-description="A personalized habit-tracking app designed to improve consistency and motivation."
+                    data-features="User authentication|Secure persistent storage|Habit creation and monitoring|Streak tracking|Daily reminder notifications|Visual progress dashboard"
+                    data-github="https://github.com/tyagipriyanshu04/Habit-Hero"
+                    data-image="habit-hero-visual.svg">
+                    <div class="project-card__image" style="background-image: url('habit-hero-visual.svg');">
+                        <span class="project-card__image-badge">Android App</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Android</span>
+                        <h3 class="project-card__title">Habit Hero App</h3>
+                        <p class="project-card__desc">Personalized habit-tracking app (Jun - Jul 2025) with
+                            authentication, secure storage, streak tracking, reminders, and a progress dashboard.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--sm btn--primary">View Details <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/tyagipriyanshu04/Habit-Hero" class="btn btn--sm btn--ghost"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card"
+                    data-title="Version Control Assistant Chatbot"
+                    data-tag="Automation"
+                    data-duration="March 2025"
+                    data-tech="Python, GitHub APIs"
+                    data-description="An automation chatbot that assists developers with version control tasks and workflow recommendations."
+                    data-features="Fetch repository data automatically|Provide contextual commands|Workflow recommendations|Integrate with ongoing projects|Improve code review efficiency"
+                    data-github="https://github.com/tyagipriyanshu04/Version-Control-Assistant"
+                    data-image="version-control-assistant-visual.svg">
+                    <div class="project-card__image" style="background-image: url('version-control-assistant-visual.svg');">
+                        <span class="project-card__image-badge">AI Automation</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Automation</span>
+                        <h3 class="project-card__title">Version Control Assistant Chatbot</h3>
+                        <p class="project-card__desc">Python + GitHub APIs chatbot (Mar 2025) to fetch repo data,
+                            provide contextual commands, and improve code review workflows.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--sm btn--primary">View Details <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/tyagipriyanshu04/Version-Control-Assistant"
+                                class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card"
+                    data-title="Superstore Dashboard"
+                    data-tag="Analytics"
+                    data-duration="February 2025"
+                    data-tech="Excel, Power BI"
+                    data-description="A business analytics dashboard focused on sales and performance insights."
+                    data-features="Interactive slicers for filtering|KPI automation (sales, profit, growth)|Pivot tables and DAX formulas|Drill-down analytics to transaction level|Inventory and strategy insights"
+                    data-github="https://github.com/tyagipriyanshu04/Dashboard---Excel-Power-BI"
+                    data-image="superstore-dashboard-visual.svg">
+                    <div class="project-card__image" style="background-image: url('superstore-dashboard-visual.svg');">
+                        <span class="project-card__image-badge">Data Dashboard</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Analytics</span>
+                        <h3 class="project-card__title">Superstore Dashboard</h3>
+                        <p class="project-card__desc">Excel and Power BI dashboard (Feb 2025) with interactive slicers,
+                            KPIs, DAX formulas, and drill-down sales analytics.</p>
+                        <div class="project-card__actions">
+                            <a href="#" class="btn btn--sm btn--primary">View Details <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="https://github.com/tyagipriyanshu04/Dashboard---Excel-Power-BI"
+                                class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== PROJECT MODAL ======================== -->
+    <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal__backdrop" data-modal-close></div>
+        <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button class="project-modal__close" data-modal-close aria-label="Close project details">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="project-modal__content">
+                <div class="project-modal__image" id="project-modal-image" role="img"
+                    aria-label="Project preview"></div>
+                <div class="project-modal__info">
+                    <span class="project-modal__tag" id="project-modal-tag"></span>
+                    <h3 class="project-modal__title" id="project-modal-title"></h3>
+                    <p class="project-modal__desc" id="project-modal-desc"></p>
+                    <div class="project-modal__meta">
+                        <div class="project-modal__meta-item">
+                            <span>Duration</span>
+                            <strong id="project-modal-duration"></strong>
+                        </div>
+                        <div class="project-modal__meta-item">
+                            <span>Tech</span>
+                            <strong id="project-modal-tech"></strong>
+                        </div>
+                    </div>
+                    <ul class="project-modal__features" id="project-modal-features"></ul>
+                    <div class="project-modal__actions">
+                        <a href="#" class="btn btn--primary" id="project-modal-github" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================== CERTIFICATES ======================== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <span class="section__subtitle">Verified learning</span>
+            <h2 class="section__title">Certificates</h2>
+
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3 class="service-card__title">Build Generative AI Apps &amp; Solutions with No-Code Tools</h3>
+                    <p class="service-card__desc">Infosys Limited certificate earned in August 2025 around practical no-code GenAI workflows and solution building.</p>
+                    <a href="https://e2.udemymail.com/ls/click?upn=u001.fZrgtsiEFAuEd5Epw844o-2FRovDks96VP1VztnlU5HKAR2AKcj84D6tEtUmZlld4-2FL8WX-2Bblf-2FWnIJlZTyfjFYEgGWDBvYq7h7LPL16-2FDsK4jwamJhK6-2Bz-2FuCW818dN7HqDSHGld18QgZNv64t9U7kTp1nFD0opMBH8inbI7A2T0dyRu1uC68eqZIptCqMUQ1N-2BuAqtttyo8IMGtQE20BsA-3D-3D0Tvf_M4fIioNPLEda6i-2FNUw7o3pyqc55w4Qvxc8CE7ot0dLUYBGayX8b8TVs6u18-2BHCWAFkEaBoCZhKO8aHCYXBc8nl2PRq-2BCJTWQkGmOmSYGceILhEP9tbBdCUIBoiLg0chEqY4n4YW7vxkKjwn2Jd03fuFgEdE3p-2BR2Ft7noumae6UP38L0VdJ4Aov5SzPIJ4Dy0smHkCHaMWZZ65kibPaQmQQf4RKebeAnyn-2Fn-2BxJigEHMLjhauFmnHSOR9F0-2BkfxdwW76O0CfMxoyH-2F8H-2FQm6-2FrrBNbHLr9ZFY-2B1BQzGb1yVgCoV8vX4tF54gOLOY2tjTS1pxm1exkvO1qUxBJCFz88AWsbsrM6yFN3uFy-2B19ICo-3D" class="service-card__link" target="_blank" rel="noopener noreferrer">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3 class="service-card__title">Computational Theory: Language Principle &amp; Finite Automata Theory</h3>
+                    <p class="service-card__desc">Infosys certificate completed in August 2025, covering formal languages and automata theory foundations.</p>
+                    <a href="https://infyspringboard.onwingspan.com/public-assets/infosysheadstart/cert/lex_auth_0135015511562403847605/1-40e446b0-0804-4937-bb2a-d1e6ee9013d3.pdf" class="service-card__link" target="_blank" rel="noopener noreferrer">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3 class="service-card__title">Privacy and Security in Online Social Media</h3>
+                    <p class="service-card__desc">NPTEL certificate earned in April 2025, centered on digital privacy, platform risks, and social-media security.</p>
+                    <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs79/Course/NPTEL25CS79S24750116204484160.pdf" class="service-card__link" target="_blank" rel="noopener noreferrer">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+                <div class="service-card">
+                    <div class="service-card__icon"><i class="fa-brands fa-python"></i></div>
+                    <h3 class="service-card__title">Python for Data Science Microlearning</h3>
+                    <p class="service-card__desc">Board Infinity certificate completed in February 2024, focused on Python fundamentals for data workflows.</p>
+                    <a href="https://drive.google.com/file/d/1MTM0SS8pi7tp4Lln0uOtCH0ETmMhD2CC/view?usp=drive_link" class="service-card__link" target="_blank" rel="noopener noreferrer">
+                        View Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== CONTACT ======================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <span class="section__subtitle">Get in touch</span>
+            <h2 class="section__title">Contact Me</h2>
+
+            <div class="contact__grid">
+                <div class="contact__info">
+                    <h3 class="contact__info-title">Open to internships</h3>
+                    <p class="contact__info-desc">Interested in Android, data analytics, or automation projects? Feel free to reach out. I'm open to learning,
+                        collaboration, and internship opportunities.</p>
+                    <div class="contact__socials">
+                        <a href="https://github.com/" class="contact__social-link" target="_blank" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/" class="contact__social-link" target="_blank"
+                            aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://instagram.com/" class="contact__social-link" target="_blank"
+                            aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://leetcode.com/" class="contact__social-link" target="_blank"
+                            aria-label="LeetCode">
+                            <span class="social-icon-letter">L</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form class="contact__form" id="contact-form">
+                    <div class="form__group">
+                        <input type="text" id="name" class="form__input" placeholder=" " required>
+                        <label for="name" class="form__label">Your Name</label>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" id="email" class="form__input" placeholder=" " required>
+                        <label for="email" class="form__label">Your Email</label>
+                    </div>
+                    <div class="form__group">
+                        <textarea id="message" class="form__input form__textarea" placeholder=" " required></textarea>
+                        <label for="message" class="form__label">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== FOOTER ======================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__quote">"Build. Analyze. Automate. Learn."</p>
+            <div class="footer__divider"></div>
+            <p class="footer__copy">&copy; 2026 Priyanshu Tyagi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal__backdrop" id="search-backdrop"></div>
+        <div class="search-modal__content">
+            <div class="search-modal__input-wrap">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" class="search-modal__input" placeholder="Search this page..."
+                    autocomplete="off">
+                <kbd class="search-modal__kbd">ESC</kbd>
+            </div>
+            <div class="search-modal__results" id="search-results"></div>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
