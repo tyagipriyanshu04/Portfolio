@@ -5,6 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ─── DOM Elements ───
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     const welcomeScreen = document.getElementById('welcome-screen');
     const enterPortfolioBtn = document.getElementById('enter-portfolio');
     const portfolioShell = document.getElementById('portfolio-shell');
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 welcomeScreen.remove();
                 document.body.classList.remove('welcome-exit');
                 document.body.classList.remove('portfolio-entering');
-            }, 700);
+            }, 520);
         }
     }
 
@@ -99,6 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // HEADER SCROLL EFFECT
     // ========================================
     function onScroll() {
+        if (!header) return;
         if (window.scrollY > 80) {
             header.classList.add('scrolled');
         } else {
@@ -106,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
     // ========================================
@@ -133,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav();
 
     // ========================================
     // SCROLL INDICATOR FADE (50% of hero)
@@ -146,10 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollRatio = window.scrollY / (heroHeight * 0.5);
         const opacity = Math.max(0, 1 - scrollRatio);
         scrollIndicator.style.opacity = opacity;
-        scrollIndicator.style.transition = 'opacity 0.4s ease';
     }
 
-    window.addEventListener('scroll', handleScrollIndicator, { passive: true });
     handleScrollIndicator();
 
     // ========================================
@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!particleContainer) return;
 
         particleContainer.innerHTML = '';
-        const count = window.innerWidth < 768 ? 24 : 48;
+        const count = window.innerWidth < 768 ? 12 : 24;
 
         for (let i = 0; i < count; i++) {
             const particle = document.createElement('div');
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resizeTimer = window.setTimeout(createParticles, 180);
     });
 
-    if (heroSection) {
+    if (heroSection && supportsHover && !prefersReducedMotion) {
         let heroFrame = null;
         let heroPointerX = 0;
         let heroPointerY = 0;
@@ -261,21 +261,18 @@ document.addEventListener('DOMContentLoaded', () => {
     addRevealClasses();
 
     const revealElements = document.querySelectorAll('.reveal, .reveal-children');
-
-    function checkReveal() {
-        const triggerBottom = window.innerHeight * 0.88;
-
-        revealElements.forEach(el => {
-            const elTop = el.getBoundingClientRect().top;
-
-            if (elTop < triggerBottom) {
-                el.classList.add('active');
-            }
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
         });
-    }
+    }, {
+        rootMargin: '0px 0px -12% 0px',
+        threshold: 0.08,
+    });
 
-    window.addEventListener('scroll', checkReveal, { passive: true });
-    checkReveal();
+    revealElements.forEach(el => revealObserver.observe(el));
 
     // ========================================
     // SEARCH FUNCTIONALITY
@@ -469,6 +466,18 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.setProperty('--pointer-y', '50%');
         card.style.setProperty('--rotate-x', '0deg');
         card.style.setProperty('--rotate-y', '0deg');
+        if (!supportsHover || prefersReducedMotion) {
+            card.addEventListener('click', (e) => {
+                const link = e.target.closest('a');
+                if (link && link.href && link.href !== '#') {
+                    e.stopPropagation();
+                    return;
+                }
+                if (link) e.preventDefault();
+                openProjectModal(card);
+            });
+            return;
+        }
         let cardFrame = null;
         let pointerX = 50;
         let pointerY = 50;
@@ -518,6 +527,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    let scrollTicking = false;
+    const handleScrollWork = () => {
+        onScroll();
+        highlightNav();
+        handleScrollIndicator();
+        scrollTicking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(handleScrollWork);
+    }, { passive: true });
+
     if (projectModal) {
         projectModal.querySelectorAll('[data-modal-close]').forEach(el => {
             el.addEventListener('click', closeProjectModal);
@@ -531,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========================================
-    // DARK MODE — CIRCLE EXPAND → FADE REVEAL
+    // DARK MODE — GLASS SWEEP TRANSITION
     // ========================================
     const darkModeToggle = document.getElementById('dark-mode-toggle');
     const themeIcon = document.getElementById('theme-icon');
@@ -553,42 +576,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const isDark = document.body.classList.contains('dark');
         const newTheme = isDark ? 'light' : 'dark';
-
-        // Button center = origin of the expanding circle
-        const rect = darkModeToggle.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-
-        // Radius to cover the entire viewport from the button center
-        const maxRadius = Math.ceil(Math.max(
-            Math.hypot(cx, cy),
-            Math.hypot(window.innerWidth - cx, cy),
-            Math.hypot(cx, window.innerHeight - cy),
-            Math.hypot(window.innerWidth - cx, window.innerHeight - cy)
-        ));
-
-        // Step 1: Create overlay with the TARGET theme color, circle(0)
         const overlay = document.createElement('div');
-        overlay.style.cssText = `
-            position: fixed; inset: 0; z-index: 9998;
-            pointer-events: none;
-            background: ${newTheme === 'dark' ? '#0f172a' : '#f8fafc'};
-            clip-path: circle(0px at ${cx}px ${cy}px);
-            transition: clip-path 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        `;
+        overlay.className = 'theme-snapshot';
+        overlay.style.background = newTheme === 'dark'
+            ? 'linear-gradient(180deg, rgba(8, 19, 12, 0.86), rgba(10, 21, 13, 0.94))'
+            : 'linear-gradient(180deg, rgba(244, 251, 245, 0.92), rgba(255, 255, 255, 0.98))';
+
         document.body.appendChild(overlay);
-        overlay.offsetHeight; // trigger reflow
+        window.requestAnimationFrame(() => {
+            overlay.classList.add('theme-snapshot--visible');
+        });
 
-        // Step 2: Expand circle to fill the entire screen
-        overlay.style.clipPath = `circle(${maxRadius}px at ${cx}px ${cy}px)`;
-
-        // Step 3: Once circle covers the screen, swap theme + fade out overlay
         setTimeout(() => {
-            // Swap the actual CSS theme
             document.body.classList.toggle('dark');
+            document.body.classList.add('theme-switching');
             localStorage.setItem('theme', newTheme);
 
-            // Swap icon
             if (newTheme === 'dark') {
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
@@ -597,16 +600,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 themeIcon.classList.add('fa-moon');
             }
 
-            // Fade out overlay to reveal the new theme underneath
-            overlay.style.transition = 'opacity 0.35s ease';
-            overlay.style.opacity = '0';
+            overlay.classList.add('theme-snapshot--exit');
 
-            // Cleanup
             setTimeout(() => {
                 overlay.remove();
+                document.body.classList.remove('theme-switching');
                 isAnimating = false;
-            }, 380);
-        }, 620); // wait for the circle expansion to finish
+            }, 320);
+        }, 160);
     }
 
     if (darkModeToggle) {
