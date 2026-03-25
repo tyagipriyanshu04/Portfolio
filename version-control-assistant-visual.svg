@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Version Control Assistant preview">
+  <defs>
+    <linearGradient id="bg-vca" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0f3d2e"/>
+      <stop offset="55%" stop-color="#1f8f5f"/>
+      <stop offset="100%" stop-color="#b7f5d4"/>
+    </linearGradient>
+    <linearGradient id="panel-vca" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4fff8"/>
+      <stop offset="100%" stop-color="#d8f7e7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg-vca)"/>
+  <circle cx="1030" cy="110" r="160" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="180" cy="630" r="220" fill="rgba(255,255,255,0.1)"/>
+  <rect x="120" y="110" width="960" height="530" rx="42" fill="url(#panel-vca)" opacity="0.98"/>
+  <rect x="160" y="150" width="320" height="40" rx="20" fill="#165b3f" opacity="0.12"/>
+  <rect x="190" y="240" width="360" height="300" rx="28" fill="#ffffff"/>
+  <rect x="230" y="280" width="90" height="18" rx="9" fill="#9ad8b4"/>
+  <rect x="230" y="320" width="220" height="20" rx="10" fill="#17583d"/>
+  <rect x="230" y="360" width="170" height="16" rx="8" fill="#72c595"/>
+  <rect x="230" y="420" width="130" height="74" rx="18" fill="#dff6e9"/>
+  <rect x="380" y="420" width="130" height="74" rx="18" fill="#c8efd9"/>
+  <path d="M265 455h60M295 425v60" stroke="#198754" stroke-width="14" stroke-linecap="round"/>
+  <path d="M412 468l22 22 42-48" fill="none" stroke="#145b3d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="610" y="240" width="350" height="72" rx="22" fill="#165b3f"/>
+  <text x="655" y="287" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">git status</text>
+  <rect x="610" y="340" width="390" height="172" rx="28" fill="#ffffff"/>
+  <circle cx="655" cy="390" r="12" fill="#20a35d"/>
+  <circle cx="655" cy="440" r="12" fill="#20a35d"/>
+  <circle cx="655" cy="490" r="12" fill="#20a35d"/>
+  <rect x="685" y="376" width="250" height="20" rx="10" fill="#1e6a49"/>
+  <rect x="685" y="426" width="220" height="20" rx="10" fill="#54ab79"/>
+  <rect x="685" y="476" width="270" height="20" rx="10" fill="#9cd8b8"/>
+  <text x="160" y="605" font-family="Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Version Control Assistant</text>
+</svg>
