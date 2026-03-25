@@ -49,6 +49,7 @@
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
                     <li class="nav__item"><a href="#experience" class="nav__link">Highlights</a></li>
+                    <li class="nav__item"><a href="#summer-training" class="nav__link">Summer Training</a></li>
                     <li class="nav__item"><a href="#services" class="nav__link">Certificates</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     <li class="nav__item"><a href="CV.pdf" class="nav__link"
@@ -216,9 +217,9 @@
                 </div>
                 <div class="experience__card">
                     <div class="experience__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
-                    <h3 class="experience__title">Android Development Training</h3>
-                    <p class="experience__desc">Summer training at LPU (Jun - Aug 2025) covering UI/UX, lifecycle,
-                        navigation, API integration, data handling, and debugging.</p>
+                    <h3 class="experience__title">Technical Focus</h3>
+                    <p class="experience__desc">Focused on Android development, data analytics, and automation through
+                        hands-on coursework, projects, and practical problem solving.</p>
                 </div>
                 <div class="experience__card">
                     <div class="experience__icon"><i class="fa-solid fa-certificate"></i></div>
@@ -232,6 +233,37 @@
                     <h3 class="experience__title">Sports Achievements</h3>
                     <p class="experience__desc">Runner-up in Arm Wrestling - DTU National Sports Event (2025). Bronze
                         medal in National-Level Badminton Tournament (2019).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================== SUMMER TRAINING ======================== -->
+    <section class="section training" id="summer-training">
+        <div class="container">
+            <span class="section__subtitle">Hands-on learning</span>
+            <h2 class="section__title">Summer Training</h2>
+
+            <div class="training__layout">
+                <div class="training__content">
+                    <div class="training__badge">Android Development</div>
+                    <h3 class="training__title">Android Development Summer Training at LPU</h3>
+                    <p class="training__meta">June 2025 - August 2025</p>
+                    <p class="training__text">Completed summer training focused on Android app development using Android Studio, covering UI design, activity and fragment lifecycle, navigation, API integration, data handling, and debugging.</p>
+                    <ul class="training__list">
+                        <li><i class="fa-solid fa-check"></i> Built stronger fundamentals in Android Studio workflow</li>
+                        <li><i class="fa-solid fa-check"></i> Practiced lifecycle management and screen navigation</li>
+                        <li><i class="fa-solid fa-check"></i> Worked with APIs, storage, and debugging techniques</li>
+                    </ul>
+                </div>
+
+                <div class="training__card">
+                    <div class="training__card-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3 class="training__card-title">Training Certificate</h3>
+                    <p class="training__card-text">Certificate/document attached for the Android Development Summer Training completed at Lovely Professional University.</p>
+                    <a href="12306660_840_22_08_2025.pdf" class="service-card__link" target="_blank" rel="noopener noreferrer">
+                        Open Certificate <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -252,8 +284,10 @@
                     data-description="A personalized habit-tracking app designed to improve consistency and motivation."
                     data-features="User authentication|Secure persistent storage|Habit creation and monitoring|Streak tracking|Daily reminder notifications|Visual progress dashboard"
                     data-github="https://github.com/tyagipriyanshu04/Habit-Hero"
-                    data-image="habit-hero-visual.svg">
-                    <div class="project-card__image" style="background-image: url('habit-hero-visual.svg');">
+                    data-image="./habit-hero-visual.svg">
+                    <div class="project-card__image">
+                        <img src="./habit-hero-visual.svg" alt="Habit Hero App preview"
+                            class="project-card__image-media" loading="lazy">
                         <span class="project-card__image-badge">Android App</span>
                     </div>
                     <div class="project-card__body">
@@ -262,8 +296,6 @@
                         <p class="project-card__desc">Personalized habit-tracking app (Jun - Jul 2025) with
                             authentication, secure storage, streak tracking, reminders, and a progress dashboard.</p>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--sm btn--primary">View Details <i
-                                    class="fa-solid fa-arrow-right"></i></a>
                             <a href="https://github.com/tyagipriyanshu04/Habit-Hero" class="btn btn--sm btn--ghost"
                                 target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-github"></i> GitHub
@@ -280,8 +312,10 @@
                     data-description="An automation chatbot that assists developers with version control tasks and workflow recommendations."
                     data-features="Fetch repository data automatically|Provide contextual commands|Workflow recommendations|Integrate with ongoing projects|Improve code review efficiency"
                     data-github="https://github.com/tyagipriyanshu04/Version-Control-Assistant"
-                    data-image="version-control-assistant-visual.svg">
-                    <div class="project-card__image" style="background-image: url('version-control-assistant-visual.svg');">
+                    data-image="./version-control-assistant-visual.svg">
+                    <div class="project-card__image">
+                        <img src="./version-control-assistant-visual.svg" alt="Version Control Assistant preview"
+                            class="project-card__image-media" loading="lazy">
                         <span class="project-card__image-badge">AI Automation</span>
                     </div>
                     <div class="project-card__body">
@@ -290,8 +324,6 @@
                         <p class="project-card__desc">Python + GitHub APIs chatbot (Mar 2025) to fetch repo data,
                             provide contextual commands, and improve code review workflows.</p>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--sm btn--primary">View Details <i
-                                    class="fa-solid fa-arrow-right"></i></a>
                             <a href="https://github.com/tyagipriyanshu04/Version-Control-Assistant"
                                 class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-github"></i> GitHub
@@ -308,8 +340,10 @@
                     data-description="A business analytics dashboard focused on sales and performance insights."
                     data-features="Interactive slicers for filtering|KPI automation (sales, profit, growth)|Pivot tables and DAX formulas|Drill-down analytics to transaction level|Inventory and strategy insights"
                     data-github="https://github.com/tyagipriyanshu04/Dashboard---Excel-Power-BI"
-                    data-image="superstore-dashboard-visual.svg">
-                    <div class="project-card__image" style="background-image: url('superstore-dashboard-visual.svg');">
+                    data-image="./superstore-dashboard-visual.svg">
+                    <div class="project-card__image">
+                        <img src="./superstore-dashboard-visual.svg" alt="Superstore Dashboard preview"
+                            class="project-card__image-media" loading="lazy">
                         <span class="project-card__image-badge">Data Dashboard</span>
                     </div>
                     <div class="project-card__body">
@@ -318,8 +352,6 @@
                         <p class="project-card__desc">Excel and Power BI dashboard (Feb 2025) with interactive slicers,
                             KPIs, DAX formulas, and drill-down sales analytics.</p>
                         <div class="project-card__actions">
-                            <a href="#" class="btn btn--sm btn--primary">View Details <i
-                                    class="fa-solid fa-arrow-right"></i></a>
                             <a href="https://github.com/tyagipriyanshu04/Dashboard---Excel-Power-BI"
                                 class="btn btn--sm btn--ghost" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-brands fa-github"></i> GitHub
@@ -489,3 +521,4 @@
 </body>
 
 </html>
+
